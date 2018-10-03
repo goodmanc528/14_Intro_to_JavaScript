@@ -10,7 +10,6 @@ function buildResultsTable(results) {
 };
 
 function buildStates(arrStates) {
-    //var arrStates = tableData.map(sighting => sighting.state)
     var uniqueStates = Array.from(new Set((arrStates)));
     uniqueStates.sort()
     uniqueStates.forEach(state => {
@@ -64,17 +63,6 @@ function buildFilters() {
     uniqueShapes.forEach(shape => {
         var option = selectshape.append("option").attr("value", shape).text(shape);
     })
-
-    // //tried to build a more compact way to build the fitlers (dropdowns).  failed building uniqueSet.  Same code works fine outside forEach method.
-    // headers.forEach(header => {
-    //     var arr = tableData.map(sighting => sighting.header)
-    //     var uniqueSet = new Set(arr) //google-fu
-    //     curList = d3.select(`#${header}`);
-    //     uniqueSet.forEach(i => {
-    //         var option = curList.append("option").attr("value", i).text(i);
-    //     }); 
-    // })
-
 }
 
 // from data.js
@@ -94,7 +82,7 @@ btnReset.on("click", function(){
     d3.event.preventDefault();
     document.getElementById("ufo-form").reset();
     buildResultsTable(tableData);
-    buildStates(tableData);
+    //buildStates(tableData);
 })
 
 btnFilter.on("click", function() {  
@@ -117,9 +105,5 @@ selectcountry.on("change", function(d) {
     buildStates(arrStates)
 });
 
-
 buildResultsTable(tableData);
 buildFilters();
-// //Below two lines can be used if dropdown lists were being built with the code starting at line 68.  This feature is a WIP
-// objHeaders = ["datetime","country","state","shape"]
-// buildFilters(objHeaders);
