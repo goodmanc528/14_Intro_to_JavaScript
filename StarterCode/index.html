@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <title>UFO Finder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
@@ -32,16 +32,37 @@
             <div class="panel panel-default">
               <div class="panel-heading">Filter Search</div>
               <div class="panel-body">
-                <form>
+                <form id="ufo-form">
                   <div class="form-group">
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
-                        <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+                        <label for="date">Select a Date</label>
+                        <select class="form-control" id="datetime" type="text">
+                          <option></option>
+                        </select>
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="country">Select a Country</label>
+                        <select class="form-control" id="country" type="text">
+                          <option></option>
+                        </select>
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="state">Select a State</label>
+                        <select class="form-control" id="state" type="text">
+                          <option></option>
+                        </select>
+                      </li>
+                      <li class="filter list-group-item">
+                        <label for="shape">Select a Shape</label>
+                        <select class="form-control" id="shape" type="text">
+                          <option></option>
+                        </select>
                       </li>
                     </ul>
                   </div>
-                  <button id="filter-btn" type="submit" class="btn btn-default">Filter Table</button>
+                    <button id="filter-btn" type="submit" class="btn btn-default">Filter Table</button>
+                    <button id="reset-btn" type="resetit" class="btn btn-default">Reset Filter</button>
                 </form>
               </div>
             </div>
